@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "586491477090",
+    "project_id": "sql-test-app-af681",
+    "storage_bucket": "sql-test-app-af681.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586491477090:android:aa9c4e40a1691c36e2253b",
+        "android_client_info": {
+          "package_name": "com.example.sql_test_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw0zO-8ykOHelQXMyRhe2icjtCDLWvd1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
