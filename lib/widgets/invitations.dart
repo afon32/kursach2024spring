@@ -14,7 +14,7 @@ Future createFamily(owner, role) async {
           database: 'afon32kursach',
           username: 'postgres',
           password: 'afanas228'),
-      settings: ConnectionSettings(sslMode: SslMode.disable));
+      settings: const ConnectionSettings(sslMode: SslMode.disable));
 
   await conn.execute(
       "INSERT INTO Family(family_owner_id, family_member_id, family_member_role) VALUES($owner, $ownerID, '$role'); ");
@@ -29,10 +29,10 @@ Future deleteInvitation(owner) async {
           database: 'afon32kursach',
           username: 'postgres',
           password: 'afanas228'),
-      settings: ConnectionSettings(sslMode: SslMode.disable));
+      settings: const ConnectionSettings(sslMode: SslMode.disable));
 
   await conn.execute(
-      "DELETE FROM Invitation WHERE invitation_from = ${owner} AND invitation_to = ${ownerID}");
+      "DELETE FROM Invitation WHERE invitation_from = $owner AND invitation_to = $ownerID");
   conn.close();
 }
 
@@ -44,7 +44,7 @@ Future getDataAboutUser() async {
           database: 'afon32kursach',
           username: 'postgres',
           password: 'afanas228'),
-      settings: ConnectionSettings(sslMode: SslMode.disable));
+      settings: const ConnectionSettings(sslMode: SslMode.disable));
 
   final result = await conn.execute(
       "SELECT user_id FROM AppUser WHERE user_login = '${FirebaseAuth.instance.currentUser!.email}'");
@@ -66,12 +66,12 @@ void showInvitations(BuildContext context) {
             future: getDataAboutUser(),
             builder: (context, snapshot) => Scaffold(
                     body: AlertDialog(
-                  title: Text('Приглашения'),
+                  title: const Text('Приглашения'),
                   content: ListView.builder(
                     itemCount: res.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Padding(
-                          padding: EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(5.0),
                           child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5.0),
@@ -81,9 +81,9 @@ void showInvitations(BuildContext context) {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(ownerName,
-                                        style: TextStyle(fontSize: 22)),
+                                        style: const TextStyle(fontSize: 22)),
                                     Text(res[index][1].toString(),
-                                        style: TextStyle(fontSize: 22)),
+                                        style: const TextStyle(fontSize: 22)),
                                     IconButton(
                                         onPressed: () {
                                           createFamily(

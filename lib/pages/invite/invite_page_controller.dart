@@ -17,7 +17,7 @@ class InvitePageController extends GetxController {
             database: 'afon32kursach',
             username: 'postgres',
             password: 'afanas228'),
-        settings: ConnectionSettings(sslMode: SslMode.disable));
+        settings: const ConnectionSettings(sslMode: SslMode.disable));
 
     final result = await conn.execute(
         "SELECT user_id FROM AppUser WHERE user_login = '${FirebaseAuth.instance.currentUser!.email}'");
@@ -41,7 +41,7 @@ class InvitePageController extends GetxController {
             database: 'afon32kursach',
             username: 'postgres',
             password: 'afanas228'),
-        settings: ConnectionSettings(sslMode: SslMode.disable));
+        settings: const ConnectionSettings(sslMode: SslMode.disable));
     
     await conn.execute("INSERT INTO Invitation(invitation_from, invitation_to, invitation_role, invitation_date) VALUES($ownerID, $recieverID, 'Сын', NULL)");
     conn.close();
@@ -59,7 +59,7 @@ class InvitePageController extends GetxController {
       itemBuilder: (BuildContext context, int index) {
         //return Text(ll[index][1].toString(), style: TextStyle(fontSize: 22),);
         return Padding(
-            padding: EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(5.0),
             child: Container(
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(5.0), color: Colors.green),
@@ -68,8 +68,8 @@ class InvitePageController extends GetxController {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(ll[index][1].toString(),
-                          style: TextStyle(fontSize: 22)),
-                      IconButton(onPressed: () {sendInvitation(ll[index][1], ll[index][0]);}, icon: Icon(Icons.person_add_alt_1_rounded))
+                          style: const TextStyle(fontSize: 22)),
+                      IconButton(onPressed: () {sendInvitation(ll[index][1], ll[index][0]);}, icon: const Icon(Icons.person_add_alt_1_rounded))
                     ])));
       },
     ));

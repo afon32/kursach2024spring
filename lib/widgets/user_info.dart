@@ -19,7 +19,7 @@ Future getDataAboutUser() async {
           database: 'afon32kursach',
           username: 'postgres',
           password: 'afanas228'),
-      settings: ConnectionSettings(sslMode: SslMode.disable));
+      settings: const ConnectionSettings(sslMode: SslMode.disable));
 
   final result = await conn.execute(
       "SELECT user_id, user_name FROM AppUser WHERE user_login = '${FirebaseAuth.instance.currentUser!.email}'");
@@ -53,10 +53,11 @@ Future searchUser() async {
 }
 
 Widget ss(prop) {
-  if (prop == 'wait...')
-    return Center(child: CircularProgressIndicator());
-  else
-    return Text('${prop}');
+  if (prop == 'wait...') {
+    return const Center(child: CircularProgressIndicator());
+  } else {
+    return Text('$prop');
+  }
 }
 
 void userInfo(BuildContext context) {
@@ -76,14 +77,14 @@ void userInfo(BuildContext context) {
                           padding: const EdgeInsets.all(5.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [Text('ID:'), ss(userID)],
+                            children: [const Text('ID:'), ss(userID)],
                           )),
                       //Text('ID: ${userID}')),
                       Padding(
                           padding: const EdgeInsets.all(5.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [Text('Имя:'), ss(userName)],
+                            children: [const Text('Имя:'), ss(userName)],
                           )),
                       Padding(
                           padding: const EdgeInsets.all(5.0),

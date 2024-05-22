@@ -3,8 +3,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:postgres/legacy.dart';
-import 'package:postgres/postgres.dart';
 import 'package:sql_test_app/pages/auth/auth_page.dart';
 import 'package:sql_test_app/pages/home_page/home_page.dart';
 import 'package:sql_test_app/utils/firebase_helper.dart';

@@ -1,6 +1,5 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:sql_test_app/pages/auth/auth_page.dart';
 import 'package:sql_test_app/pages/auth/signup/signup_controller.dart';
 import 'package:get/get.dart';
 import 'package:sql_test_app/widgets/my_elevated_button.dart';

@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:postgres/legacy.dart';
 import 'package:postgres/postgres.dart';
-import 'package:sql_test_app/pages/auth/auth_page.dart';
 import 'package:sql_test_app/utils/utils.dart';
 import 'package:get/get.dart';
 
@@ -27,7 +26,7 @@ class SignUpController extends GetxController {
               database: 'afon32kursach',
               username: 'postgres',
               password: 'afanas228'),
-          settings: ConnectionSettings(sslMode: SslMode.disable));
+          settings: const ConnectionSettings(sslMode: SslMode.disable));
       await conn.execute(
           "INSERT INTO AppUser(user_name, user_login, user_password) VALUES('${nameController.text}', '${emailController.text.trim()}', '${passController.text.trim()}')");
       conn.close();
