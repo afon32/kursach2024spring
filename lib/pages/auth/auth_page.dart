@@ -20,6 +20,8 @@ class AuthPage extends StatelessWidget {
       initState: (_) {},
       builder: (_) {
         return Scaffold(
+          //backgroundColor: Color.fromARGB(255, 73, 76, 83),
+          backgroundColor: const Color.fromARGB(255, 12, 62, 14),
           body: Center(
               child: SingleChildScrollView(
                   child: Padding(
@@ -36,7 +38,7 @@ class AuthPage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(cardBorderRadius),
                     ),
-                    color: Colors.grey.shade50,
+                    color: Color.fromARGB(255, 73, 76, 83),
                     child: Padding(
                       padding: const EdgeInsets.all(40),
                       child: Form(
@@ -46,11 +48,13 @@ class AuthPage extends StatelessWidget {
                             /// Лого
                             //const PFRLogoWidget(),
                             FractionallySizedBox(
-                                widthFactor: 0.5,
+                                widthFactor: 1.0,
                                 child: Image.asset(
-                                  'assets/logo.png',
-                                  width: 150.0,
-                                  height: 100.0,
+                                  'assets/azlogo.jpg',
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.2,
                                 )),
 
                             const SizedBox(height: 8),
@@ -61,15 +65,24 @@ class AuthPage extends StatelessWidget {
 
                             const SizedBox(height: 8),
                             TextFormField(
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.white),
                               controller: _.emailController,
-                              cursorColor: Colors.blueAccent,
+                              cursorColor: Colors.white,
                               textInputAction: TextInputAction.next,
                               decoration: const InputDecoration(
-                                  labelText: 'E-mail',
-                                  prefixIcon: Icon(Icons.person),
+                                  label: Text(
+                                    'E-mail',
+                                    style: TextStyle(
+                                        fontSize: 15, color: Colors.grey),
+                                  ),
+                                  prefixIcon: Icon(
+                                    Icons.email,
+                                    color: Colors.white,
+                                  ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Colors.blueGrey,
+                                      color: Colors.white,
                                     ),
                                   )),
                               autovalidateMode:
@@ -80,28 +93,29 @@ class AuthPage extends StatelessWidget {
                                   : null,
                             ),
 
-                            /// Логин
-                            //MyTextFieldWithBorder(
-                            //   controller: _.emailController,
-                            //    hintText: 'E-mail',
-                            //    prefixIcon: Icons.person,
-
-                            //   ),
-
                             const SizedBox(height: 8),
 
                             /// Пароль
                             TextFormField(
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.white),
                               controller: _.passController,
-                              cursorColor: Colors.blueAccent,
+                              cursorColor: Colors.white,
                               textInputAction: TextInputAction.next,
                               obscureText: true,
                               decoration: const InputDecoration(
-                                  labelText: 'Пароль',
-                                  prefixIcon: Icon(Icons.lock),
+                                  label: Text(
+                                    'Пароль',
+                                    style: TextStyle(
+                                        fontSize: 15, color: Colors.grey),
+                                  ),
+                                  prefixIcon: Icon(
+                                    Icons.lock,
+                                    color: Colors.white,
+                                  ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Colors.blueGrey,
+                                      color: Colors.white,
                                     ),
                                   )),
                               autovalidateMode:
@@ -125,7 +139,7 @@ class AuthPage extends StatelessWidget {
                             MyElevatedButton(
                               title: 'Войти',
                               onPressed: () => _.signIn(),
-                              //backgroundColor: Colors.orange,
+                              backgroundColor: Colors.green,
                             ),
                             const SizedBox(
                               height: 18,

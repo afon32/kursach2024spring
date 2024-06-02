@@ -11,6 +11,7 @@ class SelectCategoryPage extends StatelessWidget {
       init: SelectCategoryPageController(),
       initState: (_) {},
       builder: (_) {
+        _.isDownload = false;
         return FutureBuilder(
             future: _.getCategories(),
             builder: (context, snapshot) => Scaffold(body: _.list(context)));

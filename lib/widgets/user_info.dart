@@ -54,9 +54,9 @@ Future searchUser() async {
 
 Widget ss(prop) {
   if (prop == 'wait...') {
-    return const Center(child: CircularProgressIndicator());
+    return const Center(child: CircularProgressIndicator(color: Colors.green,));
   } else {
-    return Text('$prop');
+    return Text('$prop' , style: TextStyle(color: Colors.white));
   }
 }
 
@@ -69,7 +69,8 @@ void userInfo(BuildContext context) {
             builder: (context, snapshot) {
               // if (snapshot.hasData){
               return AlertDialog(
-                title: const Text('Пользователь'),
+                backgroundColor: Color.fromARGB(255, 73, 76, 83),
+                title: const Text('Пользователь' , style: TextStyle(color: Colors.white)),
                 content: SingleChildScrollView(
                   child: ListBody(
                     children: <Widget>[
@@ -77,18 +78,16 @@ void userInfo(BuildContext context) {
                           padding: const EdgeInsets.all(5.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [const Text('ID:'), ss(userID)],
+                            children: [const Text('ID:', style: TextStyle(color: Colors.white),), ss(userID)],
                           )),
                       //Text('ID: ${userID}')),
                       Padding(
                           padding: const EdgeInsets.all(5.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [const Text('Имя:'), ss(userName)],
+                            children: [const Text('Имя:', style: TextStyle(color: Colors.white)), ss(userName)],
                           )),
-                      Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Text('Уровень доступа: ${ourUser.level}')),
+                      
                     ],
                   ),
                 ),
@@ -97,7 +96,7 @@ void userInfo(BuildContext context) {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Text('Закрыть'),
+                    child: const Text('Закрыть' , style: TextStyle(color: Colors.white)),
                   ),
                 ],
               );

@@ -8,8 +8,8 @@ AppBar appBar(BuildContext context) {
     backgroundColor: Colors.black,
     actions: [
 
-      IconButton(
-          tooltip: 'Пользователь', onPressed: () {userInfo(context);}, icon: const Icon(Icons.person)),
+      // IconButton(
+      //     tooltip: 'Пользователь', onPressed: () {userInfo(context);}, icon: const Icon(Icons.person)),
           IconButton(onPressed: () {showInvitations(context);}, icon: const Icon(Icons.mail)),
       IconButton(
           tooltip: 'Выход',
@@ -19,7 +19,7 @@ AppBar appBar(BuildContext context) {
           icon: const Icon(Icons.exit_to_app)),
     ],
     // leading: Image.asset(
-    //         'assets/logo.png',
+    //         'assets/azlogo.jpg',
     //         fit: BoxFit.contain
     //       )
   );
